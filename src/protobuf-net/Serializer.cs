@@ -174,7 +174,9 @@ namespace ProtoBuf
         /// </summary>
         /// <typeparam name="T">The type of object to be [de]deserialized by the formatter.</typeparam>
         /// <returns>A new IFormatter to be used during [de]serialization.</returns>
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
         public static System.Runtime.Serialization.IFormatter CreateFormatter<[DynamicallyAccessedMembers(DynamicAccess.ContractType)] T>()
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
         {
             return RuntimeTypeModel.Default.CreateFormatter(typeof(T));
         }

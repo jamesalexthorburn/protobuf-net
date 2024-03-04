@@ -1839,12 +1839,16 @@ namespace ProtoBuf.Meta
         /// </summary>
         /// <returns>A new IFormatter to be used during [de]serialization.</returns>
         /// <param name="type">The type of object to be [de]deserialized by the formatter.</param>
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
         public System.Runtime.Serialization.IFormatter CreateFormatter([DynamicallyAccessedMembers(DynamicAccess.ContractType)] Type type)
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
         {
             return new Formatter(this, type);
         }
 
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
         internal sealed class Formatter : System.Runtime.Serialization.IFormatter
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
         {
             private readonly TypeModel model;
             private readonly Type type;
